@@ -1,0 +1,49 @@
+[
+  { "slug": "4-harebell-ave-wf2-0aq", "displayTitle": "Harebell Avenue – WF2 0AQ", "status": "let", "summary": "High-quality family house finished in a consistent neutral style.", "highlights": ["Neutral décor throughout", "Low-maintenance garden", "Responsive maintenance"], "images": ["/properties/4-harebell-ave-wf2-0aq/01.jpg"] },
+
+  { "slug": "48-oakwood-ave-wf2-9js", "displayTitle": "Oakwood Avenue – WF2 9JS", "status": "let", "summary": "Well-located home maintained to a high standard.", "highlights": ["Consistent finish", "Family-friendly area", "Fast repairs"], "images": ["/properties/48-oakwood-ave-wf2-9js/01.jpg"] },
+
+  { "slug": "7-aysgarth-close-wf2-8uh", "displayTitle": "Aysgarth Close – WF2 8UH", "status": "let", "summary": "Presented in a neutral scheme, ready to feel like home.", "highlights": ["Neutral décor", "Low-maintenance garden", "Trusted local trades"], "images": ["/properties/7-aysgarth-close-wf2-8uh/01.jpg"] },
+
+  { "slug": "1-1a-cosby-road-le19-2hg", "displayTitle": "Cosby Road – LE19 2HG", "status": "let", "summary": "A quality home designed for long-term living.", "highlights": ["Well maintained", "Long-term approach", "Tenant-first"], "images": ["/properties/1-1a-cosby-road-le19-2hg/01.jpg"] },
+
+  { "slug": "3-cosby-road-le19-2hg", "displayTitle": "Cosby Road – LE19 2HG", "status": "let", "summary": "Finished to a consistent standard, managed with care.", "highlights": ["Neutral finish", "Fast response maintenance", "Quality area"], "images": ["/properties/3-cosby-road-le19-2hg/01.jpg"] },
+
+  { "slug": "21-harebell-ave-wf2-0aq", "displayTitle": "Harebell Avenue – WF2 0AQ", "status": "let", "summary": "Presented to a high standard with a clean, timeless finish.", "highlights": ["Neutral décor", "Low-maintenance outdoor space", "Well maintained"], "images": ["/properties/21-harebell-ave-wf2-0aq/01.jpg"] },
+
+  { "slug": "12-laithes-view-wf2-9hy", "displayTitle": "Laithes View – WF2 9HY", "status": "let", "summary": "Thoughtfully prepared and professionally maintained.", "highlights": ["Consistent standard", "Family-friendly location", "Tenant-first"], "images": ["/properties/12-laithes-view-wf2-9hy/01.jpg"] },
+
+  { "slug": "5-laithes-close-wf2-9tn", "displayTitle": "Laithes Close – WF2 9TN", "status": "let", "summary": "A calm, neutral home that tenants can make their own.", "highlights": ["Neutral décor", "Low-maintenance garden", "Prompt repairs"], "images": ["/properties/5-laithes-close-wf2-9tn/01.jpg"] },
+
+  { "slug": "5-aysgarth-close-wf2-8uh", "displayTitle": "Aysgarth Close – WF2 8UH", "status": "let", "summary": "High-quality finish with long-term care in mind.", "highlights": ["Consistent finish", "Trusted trades", "Well maintained"], "images": ["/properties/5-aysgarth-close-wf2-8uh/01.jpg"] },
+
+  { "slug": "16-laithes-view-wf2-9hy", "displayTitle": "Laithes View – WF2 9HY", "status": "let", "summary": "Prepared for comfortable family living.", "highlights": ["Neutral décor", "Quality area", "Responsive maintenance"], "images": ["/properties/16-laithes-view-wf2-9hy/01.jpg"] },
+
+  { "slug": "15-laithes-court-wf2-9tq", "displayTitle": "Laithes Court – WF2 9TQ", "status": "let", "summary": "A well-kept home finished to a consistent standard.", "highlights": ["Consistent finish", "Low-maintenance garden", "Tenant-first"], "images": ["/properties/15-laithes-court-wf2-9tq/01.jpg"] },
+
+  { "slug": "9-berryfield-garth-wf5-9te", "displayTitle": "Berryfield Garth – WF5 9TE", "status": "let", "summary": "Well maintained, neutral and ready for long-term living.", "highlights": ["Neutral décor", "Well located", "Fast repairs"], "images": ["/properties/9-berryfield-garth-wf5-9te/01.jpg"] },
+
+  { "slug": "20-laithes-view-wf2-9hy", "displayTitle": "Laithes View – WF2 9HY", "status": "let", "summary": "A clean, calm home managed with care.", "highlights": ["Tenant-first", "Trusted trades", "Consistent finish"], "images": ["/properties/20-laithes-view-wf2-9hy/01.jpg"] },
+
+  { "slug": "142-crossflatts-grove-ls11-7bw", "displayTitle": "Crossflatts Grove – LS11 7BW", "status": "let", "summary": "A quality house prepared to WGMI’s consistent standard.", "highlights": ["Neutral décor", "Well maintained", "Long-term approach"], "images": ["/properties/142-crossflatts-grove-ls11-7bw/01.jpg"] },
+
+  { "slug": "18-laithes-view-wf2-9hy", "displayTitle": "Laithes View – WF2 9HY", "status": "let", "summary": "Presented for long-term family living.", "highlights": ["Consistent finish", "Quality area", "Fast repairs"], "images": ["/properties/18-laithes-view-wf2-9hy/01.jpg"] },
+
+  { "slug": "28-willow-road-wf2-9tb", "displayTitle": "Willow Road – WF2 9TB", "status": "let", "summary": "A well-cared-for home with a neutral, timeless finish.", "highlights": ["Neutral décor", "Low-maintenance garden", "Responsive maintenance"], "images": ["/properties/28-willow-road-wf2-9tb/01.jpg"] },
+
+  { "slug": "2-harebell-ave-wf2-0aq", "displayTitle": "Harebell Avenue – WF2 0AQ", "status": "let", "summary": "Finished and maintained to WGMI’s consistent standard.", "highlights": ["Consistent finish", "Tenant-first", "Trusted trades"], "images": ["/properties/2-harebell-ave-wf2-0aq/01.jpg"] },
+
+  { "slug": "11-willow-gardens-wf2-9ta", "displayTitle": "Willow Gardens – WF2 9TA", "status": "let", "summary": "A calm, neutral home tenants can make their own.", "highlights": ["Neutral décor", "Family-friendly location", "Fast repairs"], "images": ["/properties/11-willow-gardens-wf2-9ta/01.jpg"] },
+
+  { "slug": "35-springfield-grange-wf2-9qa", "displayTitle": "Springfield Grange – WF2 9QA", "status": "let", "summary": "High-quality home maintained with a long-term mindset.", "highlights": ["Consistent finish", "Well maintained", "Tenant-first"], "images": ["/properties/35-springfield-grange-wf2-9qa/01.jpg"] },
+
+  { "slug": "13-beechwood-ave-wf2-9jz", "displayTitle": "Beechwood Avenue – WF2 9JZ", "status": "let", "summary": "A quality family house finished in a neutral scheme.", "highlights": ["Neutral décor", "Low-maintenance garden", "Responsive maintenance"], "images": ["/properties/13-beechwood-ave-wf2-9jz/01.jpg"] },
+
+  { "slug": "4-foxglove-folly-wf2-0ff", "displayTitle": "Foxglove Folly – WF2 0FF", "status": "let", "summary": "A well-presented home designed for long-term living.", "highlights": ["Consistent finish", "Tenant-first", "Trusted trades"], "images": ["/properties/4-foxglove-folly-wf2-0ff/01.jpg"] },
+
+  { "slug": "7-laithes-crescent-wf2-9tr", "displayTitle": "Laithes Crescent – WF2 9TR", "status": "let", "summary": "Maintained to a high standard with a neutral, timeless finish.", "highlights": ["Neutral décor", "Well maintained", "Fast repairs"], "images": ["/properties/7-laithes-crescent-wf2-9tr/01.jpg"] },
+
+  { "slug": "62-larkspur-way-wf2-0fd", "displayTitle": "Larkspur Way – WF2 0FD", "status": "let", "summary": "A quality house prepared and managed with care.", "highlights": ["Consistent finish", "Tenant-first", "Responsive maintenance"], "images": ["/properties/62-larkspur-way-wf2-0fd/01.jpg"] },
+
+  { "slug": "50-oakwood-ave-wf2-9js", "displayTitle": "Oakwood Avenue – WF2 9JS", "status": "let", "summary": "High-quality finish in a strong family location.", "highlights": ["Neutral décor", "Family-friendly area", "Trusted trades"], "images": ["/properties/50-oakwood-ave-wf2-9js/01.jpg"] }
+]
