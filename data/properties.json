@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "21harebell",
+    "area": "Alverthorpe",
+    "postcode": "WF2",
+    "status": "let",
+    "summary": "Beautifully presented family house with neutral finish and low-maintenance garden.",
+    "highlights": ["Neutral décor throughout", "Low-maintenance garden", "Responsive maintenance", "Modern kitchen"],
+    "images": ["/properties/21harebell/01.jpg", "/properties/21harebell/02.jpg", "/properties/21harebell/03.jpg", "/properties/21harebell/04.jpg"]
+  },
+  {
+    "slug": "14meadow",
+    "area": "Ossett",
+    "postcode": "WF5",
+    "status": "let",
+    "summary": "Spacious three-bedroom home with a contemporary finish in a quiet residential street.",
+    "highlights": ["Three double bedrooms", "Contemporary bathroom", "Off-street parking", "Close to local amenities"],
+    "images": ["/properties/14meadow/01.jpg", "/properties/14meadow/02.jpg", "/properties/14meadow/03.jpg"]
+  },
+  {
+    "slug": "8oakwood",
+    "area": "Horbury",
+    "postcode": "WF4",
+    "status": "available",
+    "summary": "Recently refurbished end-terrace with generous living space and a modern kitchen.",
+    "highlights": ["Recently refurbished", "Modern fitted kitchen", "Generous garden", "Quiet cul-de-sac location"],
+    "images": ["/properties/8oakwood/01.jpg", "/properties/8oakwood/02.jpg", "/properties/8oakwood/03.jpg", "/properties/8oakwood/04.jpg"]
+  },
+  {
+    "slug": "32elm",
+    "area": "Wakefield",
+    "postcode": "WF1",
+    "status": "let",
+    "summary": "Stylish two-bedroom terrace within walking distance of the city centre.",
+    "highlights": ["City centre location", "Two double bedrooms", "Neutral throughout", "Low-maintenance rear yard"],
+    "images": ["/properties/32elm/01.jpg", "/properties/32elm/02.jpg", "/properties/32elm/03.jpg"]
+  },
+  {
+    "slug": "5willow",
+    "area": "Hinckley",
+    "postcode": "LE10",
+    "status": "let",
+    "summary": "Well-maintained semi-detached in a popular South Leicestershire market town.",
+    "highlights": ["Semi-detached family home", "Driveway parking", "Enclosed rear garden", "Close to schools"],
+    "images": ["/properties/5willow/01.jpg", "/properties/5willow/02.jpg", "/properties/5willow/03.jpg", "/properties/5willow/04.jpg"]
+  },
+  {
+    "slug": "19birch",
+    "area": "Earl Shilton",
+    "postcode": "LE9",
+    "status": "available",
+    "summary": "Charming three-bedroom property with period features and modern upgrades.",
+    "highlights": ["Period character features", "Modern central heating", "Three bedrooms", "Village location"],
+    "images": ["/properties/19birch/01.jpg", "/properties/19birch/02.jpg", "/properties/19birch/03.jpg"]
+  }
+]

@@ -1,0 +1,125 @@
+Build a new premium website for a UK property company called “WGMI” (William George Management and Investments Ltd).
+
+GOAL
+Create a clean, classy, tenant-focused website with:
+1) A public homepage that explains WGMI and feels premium (lots of whitespace, big drone hero image, minimal text)
+2) A password-protected portfolio section listing 26 properties (area + postcode only, no full addresses)
+3) Individual protected property pages with a classy gallery (4–8 images max per property, not a huge estate agent dump)
+4) Share links for single properties using expiring tokens (so I can email a tenant a link like wgmi.co.uk/s/<token> that opens just one property and expires after X days)
+5) Clean URLs like /p/21harebell and /portfolio
+6) SEO basics for the homepage (title, meta description, OG tags)
+
+TECH STACK (keep it simple but solid)
+- Next.js (App Router) + TypeScript
+- Tailwind CSS (for fast, consistent styling)
+- Use next/font for fonts
+- Store properties in a JSON file (no database needed)
+- Images served from /public
+- Implement password protection via Next.js middleware
+- Implement share links via signed JWT tokens (no database needed) with expiry built into the token
+
+DESIGN SYSTEM
+- Background: warm cream/off-white
+- Text: soft charcoal
+- Accent: deep red #d42027 used sparingly (thin lines/separators, small hover underline, subtle accents)
+- Headings: large serif font (premium feel)
+- Body: clean sans-serif
+- Layout: max width ~1200px, lots of whitespace, big images, minimal clutter
+
+PAGES + ROUTES
+1) Public homepage: /
+   Sections:
+   - Full-width hero with drone image background, overlay and text:
+     H1: “A Private Portfolio of High-Quality Homes”
+     Subheading: “A growing collection of thoughtfully maintained family houses across West Yorkshire and South Leicestershire — designed for long-term living.”
+     Buttons: “View Portfolio” -> /portfolio (will require login), and “Enquire” -> #contact
+   - “Our Approach” with 3 pillars:
+     1) Invest Where We Know
+     2) Finish to a Consistent Standard
+     3) Maintain Responsibly
+   - Quote style section:
+     “We look after our homes properly — so our tenants can enjoy them properly.”
+     Supporting text about neutral décor, tenants encouraged to make it a home, pictures on walls, long-term.
+   - Portfolio teaser section with a small 3–4 image grid and a CTA “Request a Property Link”
+   - Areas: West Yorkshire and South Leicestershire
+   - Contact form (Name, Email, Message, Reason dropdown). Form can use a server action that sends an email via a placeholder function for now (log to console), and include a TODO comment to connect to my email provider later.
+
+2) Protected portfolio landing page: /portfolio
+   - Grid of property cards from properties JSON
+   - Each card shows one thumbnail image, “Area – Postcode” and short highlights
+   - Clicking card goes to /p/[slug]
+
+3) Protected property page: /p/[slug]
+   - Title: “Area – Postcode”
+   - Short intro paragraph
+   - Gallery carousel/lightbox (simple, classy)
+   - Bullet list highlights
+   - Small note: “Full address provided during the viewing process.”
+
+4) Share link route: /s/[token]
+   - Token is a signed JWT that contains:
+     - slug (string)
+     - exp (expiry timestamp)
+   - If token valid, show the same property page content WITHOUT requiring the password
+   - If token expired/invalid, show a polite “Link expired” page with a contact button
+
+AUTH / SECURITY
+- Protect /portfolio and /p/* with middleware that checks a cookie “wgmi_auth=1”
+- /login page asks for a single password (stored in env var WGMI_PORTFOLIO_PASSWORD)
+- On correct password, set cookie wgmi_auth=1 (httpOnly, secure in prod)
+- Share link pages /s/* bypass password but require valid JWT signature
+- JWT secret stored in env var WGMI_SHARE_JWT_SECRET
+
+ADMIN (simple)
+- Create a protected admin page /admin/share (requires portfolio login)
+- It lets me choose a property slug from dropdown and choose expiry days (default 7)
+- It generates a share URL like /s/<token> and displays a “Copy link” button
+- This avoids me generating tokens manually
+
+DATA MODEL
+Create /data/properties.json like:
+[
+  {
+    "slug": "21harebell",
+    "area": "Alverthorpe",
+    "postcode": "WF2",
+    "status": "let", // or "available"
+    "summary": "Beautifully presented family house with neutral finish and low-maintenance garden.",
+    "highlights": ["Neutral décor throughout", "Low-maintenance garden", "Responsive maintenance"],
+    "images": [
+      "/properties/21harebell/01.jpg",
+      "/properties/21harebell/02.jpg",
+      "/properties/21harebell/03.jpg"
+    ]
+  }
+]
+
+IMAGES
+- Put homepage hero drone image at: /public/images/hero-drone.jpg
+- Put property images in: /public/properties/<slug>/01.jpg etc.
+- Add graceful fallbacks if an image is missing
+
+BRANDING
+- Top nav left: “William George” (later I’ll replace with a logo)
+- Nav links: Home, About (optional), Portfolio (protected)
+- Right side: email icon + property@wgmi.co.uk
+- Footer: company name + “Modern high-quality homes for professional tenants and families.”
+
+ABOUT PAGE (optional but nice)
+- /about as a public page with the same classy design and a short brand-only story:
+  - long-term investor
+  - tenant-first
+  - consistent standard
+  - areas we know well
+
+DELIVERABLE
+- Working Next.js app with the routes above
+- Clean responsive styling (desktop + mobile)
+- Placeholder content where needed, but complete structure
+- Add clear comments in code showing where I add the 26 properties and images
+
+ENV VARS NEEDED
+- WGMI_PORTFOLIO_PASSWORD=yourpassword
+- WGMI_SHARE_JWT_SECRET=longrandomstring
+
+Make sure the UI is premium and minimal, similar in spirit to “littleboydevelopments.co.uk” (but do NOT copy it). Keep it classy, modern, whitespace, large serif headings, subtle deep red accent line.
