@@ -2,7 +2,6 @@ import { verifyShareToken } from "@/lib/auth";
 import { getPropertyBySlug } from "@/lib/properties";
 import { notFound } from "next/navigation";
 import PropertyGallery from "@/components/PropertyGallery";
-import Link from "next/link";
 
 interface Props {
   params: { token: string };
@@ -50,13 +49,11 @@ export default function SharePage({ params }: Props) {
         <div className="mb-8">
           <div className="accent-line mb-6" />
           <h1 className="font-serif text-3xl md:text-4xl">
-            {property.area}{" "}
-            <span className="text-charcoal-light font-sans text-xl md:text-2xl">
-              – {property.postcode}
-            </span>
+            {property.displayTitle}
           </h1>
           {property.status === "available" && (
-            <span className="inline-block mt-3 text-xs tracking-widest uppercase text-accent border border-accent/30 px-3 py-1">
+            <span className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full bg-cream border border-charcoal/20 text-[10px] tracking-widest uppercase text-charcoal">
+              <span className="w-1 h-1 rounded-full bg-accent" />
               Available
             </span>
           )}
@@ -66,7 +63,7 @@ export default function SharePage({ params }: Props) {
           {property.summary}
         </p>
 
-        <PropertyGallery images={property.images} alt={`${property.area} – ${property.postcode}`} />
+        <PropertyGallery images={property.images} alt={property.displayTitle} />
 
         <div className="mt-12 max-w-2xl">
           <h2 className="font-serif text-xl mb-4">Property Highlights</h2>

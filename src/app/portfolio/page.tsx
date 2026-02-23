@@ -24,36 +24,30 @@ export default function PortfolioPage() {
               href={`/p/${property.slug}`}
               className="group block"
             >
-              <div className="aspect-[4/3] bg-charcoal/5 overflow-hidden mb-4">
+              <div className="aspect-[4/3] bg-charcoal/5 overflow-hidden mb-4 relative">
                 <PropertyImage
                   src={property.images[0]}
-                  alt={`${property.area} – ${property.postcode}`}
+                  alt={property.displayTitle}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="flex items-start justify-between">
-                <div>
-                  <h2 className="font-serif text-lg">
-                    {property.area}{" "}
-                    <span className="text-charcoal-light font-sans text-sm">
-                      – {property.postcode}
+              <div>
+                <div className="flex items-start justify-between gap-3">
+                  <h2 className="font-serif text-lg">{property.displayTitle}</h2>
+                  {property.status === "available" && (
+                    <span className="inline-flex items-center gap-1.5 shrink-0 mt-0.5 px-2.5 py-0.5 rounded-full bg-cream border border-charcoal/20 text-[10px] tracking-widest uppercase text-charcoal">
+                      <span className="w-1 h-1 rounded-full bg-accent" />
+                      Available
                     </span>
-                  </h2>
-                  <p className="text-charcoal-light text-sm mt-1 line-clamp-2">
-                    {property.summary}
-                  </p>
+                  )}
                 </div>
-                {property.status === "available" && (
-                  <span className="text-xs tracking-wide uppercase text-accent mt-1 shrink-0 ml-3">
-                    Available
-                  </span>
-                )}
+                <p className="text-charcoal-light text-sm mt-1 line-clamp-2">
+                  {property.summary}
+                </p>
               </div>
             </Link>
           ))}
         </div>
-
-        {/* Add more properties by editing /data/properties.json */}
       </div>
     </div>
   );

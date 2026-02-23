@@ -2,8 +2,7 @@ import propertiesData from "../../data/properties.json";
 
 export interface Property {
   slug: string;
-  area: string;
-  postcode: string;
+  displayTitle: string;
   status: "let" | "available";
   summary: string;
   highlights: string[];

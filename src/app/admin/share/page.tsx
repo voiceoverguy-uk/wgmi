@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 
 interface PropertyOption {
   slug: string;
-  area: string;
-  postcode: string;
+  displayTitle: string;
 }
 
 export default function AdminSharePage() {
@@ -74,7 +73,7 @@ export default function AdminSharePage() {
             >
               {properties.map((p) => (
                 <option key={p.slug} value={p.slug}>
-                  {p.area} – {p.postcode} ({p.slug})
+                  {p.displayTitle}
                 </option>
               ))}
             </select>

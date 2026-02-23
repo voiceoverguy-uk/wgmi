@@ -4,8 +4,7 @@ import { getAllProperties } from "@/lib/properties";
 export async function GET() {
   const properties = getAllProperties().map((p) => ({
     slug: p.slug,
-    area: p.area,
-    postcode: p.postcode,
+    displayTitle: p.displayTitle,
   }));
   return NextResponse.json(properties);
 }
