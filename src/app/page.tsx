@@ -12,6 +12,9 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 to-charcoal/70" />
         <div className="relative z-10 text-center px-6 max-w-3xl">
+          <p className="text-sm md:text-base tracking-widest uppercase text-white/70 mb-4">
+            William George Management &amp; Investments
+          </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
             A Private Portfolio of High-Quality Homes
           </h1>
