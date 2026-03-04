@@ -103,9 +103,13 @@ export default function Home() {
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="aspect-[4/3] bg-charcoal/5 flex items-center justify-center text-charcoal-light text-sm"
+                className="aspect-[4/3] bg-charcoal/5 overflow-hidden"
               >
-                Property image {i}
+                <img
+                  src={`/images/teaser-${i}.jpg`}
+                  alt={`WGMI property ${i}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
