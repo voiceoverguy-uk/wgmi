@@ -26,6 +26,14 @@ export const metadata: Metadata = {
       "A growing collection of thoughtfully maintained family houses across West Yorkshire and South Leicestershire — designed for long-term living.",
     type: "website",
     locale: "en_GB",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "WGMI — A Private Portfolio of High-Quality Homes",
+      },
+    ],
   },
 };
 

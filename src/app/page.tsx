@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative min-h-[85vh] flex items-center justify-center bg-charcoal">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: "url('/images/hero-drone.png')" }}
+          style={{ backgroundImage: "url('/images/hero-drone.jpg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 to-charcoal/70" />
         <div className="relative z-10 text-center px-6 max-w-3xl">
