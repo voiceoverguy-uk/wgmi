@@ -35,8 +35,8 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="text-center py-12">
-        <p className="font-serif text-xl mb-2">Thank you for your message.</p>
-        <p className="text-charcoal-light text-sm">We&apos;ll be in touch shortly.</p>
+        <p className="font-serif text-xl mb-2">Thank you.</p>
+        <p className="text-charcoal-light text-sm">Your message has been sent.</p>
       </div>
     );
   }
@@ -96,7 +96,7 @@ export default function ContactForm() {
         {status === "sending" ? "Sending..." : "Send Message"}
       </button>
       {status === "error" && (
-        <p className="text-accent text-sm text-center">Something went wrong. Please try again.</p>
+        <p className="text-accent text-sm text-center">Sorry, something went wrong. Please try again.</p>
       )}
     </form>
   );

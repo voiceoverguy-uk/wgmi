@@ -1,21 +1,100 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const safe = (v = "") =>
+  String(v)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, reason, message } = body;
 
-    // TODO: Connect to email provider (e.g. SendGrid, Resend, etc.)
-    // For now, log the contact form submission to the console
-    console.log("=== New Contact Form Submission ===");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Reason:", reason);
-    console.log("Message:", message);
-    console.log("===================================");
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    }
+
+    const nameSafe = safe(name);
+    const emailSafe = safe(email);
+    const reasonSafe = safe(reason);
+    const messageSafe = safe(message).replace(/\n/g, "<br>");
+
+    const sentAt = new Date().toLocaleString("en-GB", {
+      timeZone: "Europe/London",
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    const html = `
+      <div style="font-family: Arial, Helvetica, sans-serif; background:#f6f7f9; padding:24px;">
+        <div style="max-width:640px; margin:0 auto; background:#ffffff; border:1px solid #e6e8ec; border-radius:12px; overflow:hidden;">
+          
+          <div style="padding:18px 22px; background:#111827; color:#ffffff;">
+            <div style="font-size:16px; font-weight:700; letter-spacing:0.2px;">WGMI Website Enquiry</div>
+            <div style="font-size:12px; opacity:0.85; margin-top:4px;">Received: ${sentAt}</div>
+          </div>
+
+          <div style="padding:22px;">
+            <div style="margin-bottom:14px;">
+              <div style="font-size:12px; color:#6b7280; text-transform:uppercase; letter-spacing:0.6px;">From</div>
+              <div style="font-size:15px; color:#111827; font-weight:700; margin-top:4px;">${nameSafe}</div>
+              <div style="font-size:14px; margin-top:2px;">
+                <a href="mailto:${emailSafe}" style="color:#2563eb; text-decoration:none;">${emailSafe}</a>
+              </div>
+            </div>
+
+            ${reasonSafe ? `
+            <div style="margin-bottom:14px;">
+              <div style="font-size:12px; color:#6b7280; text-transform:uppercase; letter-spacing:0.6px;">Reason</div>
+              <div style="font-size:14px; color:#111827; margin-top:4px;">${reasonSafe}</div>
+            </div>
+            ` : ""}
+
+            <hr style="border:none; border-top:1px solid #e6e8ec; margin:16px 0;" />
+
+            <div>
+              <div style="font-size:12px; color:#6b7280; text-transform:uppercase; letter-spacing:0.6px;">Message</div>
+              <div style="font-size:14px; color:#111827; line-height:1.55; margin-top:8px; white-space:normal;">
+                ${messageSafe || "<em style='color:#6b7280;'>No message provided.</em>"}
+              </div>
+            </div>
+
+            <hr style="border:none; border-top:1px solid #e6e8ec; margin:18px 0;" />
+
+            <div style="font-size:12px; color:#6b7280;">
+              Reply directly to this email to respond (Reply-To is set to the sender).
+            </div>
+          </div>
+
+          <div style="padding:14px 22px; background:#f9fafb; border-top:1px solid #e6e8ec; font-size:12px; color:#6b7280;">
+            WGMI • Website contact form
+          </div>
+
+        </div>
+      </div>
+    `;
+
+    await resend.emails.send({
+      from: "WGMI Website <noreply@voiceoverguy.co.uk>",
+      to: ["enquiries@wgmi.co.uk", "enquiries@voiceoverguy.co.uk"],
+      subject: "WGMI Website Enquiry",
+      replyTo: email,
+      html,
+    });
 
     return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  } catch (err) {
+    console.error("Contact form error:", err);
+    return NextResponse.json({ error: "Failed to send" }, { status: 500 });
   }
 }

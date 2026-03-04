@@ -46,7 +46,7 @@ export default function AboutPage() {
                 Consistent Standard
               </h2>
               <p className="text-sm">
-                Whether it&apos;s a terrace in Wakefield or a semi in Hinckley,
+                Whether it&apos;s a terrace in Wakefield or a semi in Narborough,
                 every WGMI property is finished to the same standard: neutral
                 décor, modern kitchens, quality fixtures, and clean, well-kept
                 gardens.

@@ -9,6 +9,7 @@ Premium property website for a UK property company. Features a public homepage, 
 - **Fonts**: Playfair Display (serif headings) + Inter (body) via next/font
 - **Auth**: Cookie-based password protection via middleware
 - **Share Links**: Signed JWT tokens with expiry
+- **Email**: Resend (contact form sends to enquiries@wgmi.co.uk)
 - **Data**: Properties stored in `/data/properties.json`
 
 ## Project Structure
@@ -47,6 +48,7 @@ public/
 ## Environment Variables
 - `WGMI_PORTFOLIO_PASSWORD` — Password to access portfolio
 - `WGMI_SHARE_JWT_SECRET` — Secret for signing share link tokens
+- `RESEND_API_KEY` — API key for Resend email service (contact form)
 
 ## Design System
 - Background: warm cream #FAF8F5

@@ -139,7 +139,7 @@ export default function Home() {
             <div className="p-8 border border-charcoal/10">
               <h3 className="font-serif text-xl mb-2">South Leicestershire</h3>
               <p className="text-charcoal-light text-sm">
-                Hinckley, Earl Shilton, Barwell and surrounding areas.
+                Littlethorpe, Cosby and Narborough.
               </p>
             </div>
           </div>
