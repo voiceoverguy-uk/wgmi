@@ -14,9 +14,9 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-col md:items-end gap-1 text-sm text-charcoal-light">
-            <a href="mailto:property@wgmi.co.uk" className="hover:text-charcoal transition-colors">
-              property@wgmi.co.uk
-            </a>
+            <Link href="/#contact" className="hover:text-charcoal transition-colors">
+              Contact Us
+            </Link>
             <p>William George Management &amp; Investments Ltd</p>
           </div>
         </div>

@@ -23,15 +23,9 @@ export default function Navbar() {
           <Link href="/portfolio" className="text-sm tracking-wide text-charcoal-light hover:text-charcoal transition-colors">
             Portfolio
           </Link>
-          <a
-            href="mailto:property@wgmi.co.uk"
-            className="text-sm tracking-wide text-charcoal-light hover:text-charcoal transition-colors flex items-center gap-1.5"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-            </svg>
-            property@wgmi.co.uk
-          </a>
+          <Link href="/#contact" className="text-sm tracking-wide text-charcoal-light hover:text-charcoal transition-colors">
+            Contact Us
+          </Link>
         </div>
 
         <button
@@ -54,7 +48,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setMobileOpen(false)} className="block text-sm tracking-wide text-charcoal-light">Home</Link>
           <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-sm tracking-wide text-charcoal-light">About</Link>
           <Link href="/portfolio" onClick={() => setMobileOpen(false)} className="block text-sm tracking-wide text-charcoal-light">Portfolio</Link>
-          <a href="mailto:property@wgmi.co.uk" className="block text-sm tracking-wide text-charcoal-light">property@wgmi.co.uk</a>
+          <Link href="/#contact" onClick={() => setMobileOpen(false)} className="block text-sm tracking-wide text-charcoal-light">Contact Us</Link>
         </div>
       )}
     </header>
