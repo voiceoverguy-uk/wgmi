@@ -20,8 +20,6 @@ expertMode = true
 [userenv]
 
 [userenv.development]
-WGMI_PORTFOLIO_PASSWORD = "wgmi2024"
-WGMI_SHARE_JWT_SECRET = "wgmi-share-secret-key-change-me-in-production-abc123xyz"
 
 [workflows]
 runButton = "Project"
