@@ -133,7 +133,7 @@ export default function Home() {
             <div className="p-8 border border-charcoal/10">
               <h3 className="font-serif text-xl mb-2">West Yorkshire</h3>
               <p className="text-charcoal-light text-sm">
-                Wakefield, Ossett, Horbury, Alverthorpe and surrounding areas.
+                Wakefield, Ossett, Flanshaw, Lupset.
               </p>
             </div>
             <div className="p-8 border border-charcoal/10">
