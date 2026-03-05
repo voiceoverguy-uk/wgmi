@@ -10,7 +10,7 @@ Premium property website for a UK property company. Features a public homepage, 
 - **Auth**: Cookie-based password protection via middleware
 - **Share Links**: Signed JWT tokens with expiry
 - **Email**: Resend (contact form sends to enquiries@wgmi.co.uk)
-- **Data**: Properties stored in `/data/properties.json`
+- **Data**: 25 properties stored in `/data/properties.json`
 
 ## Project Structure
 ```
