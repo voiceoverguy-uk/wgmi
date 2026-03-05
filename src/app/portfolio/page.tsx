@@ -24,7 +24,7 @@ export default function PortfolioPage() {
               href={`/p/${property.slug}`}
               className="group block"
             >
-              <div className="aspect-[4/3] bg-charcoal/5 overflow-hidden mb-4 relative">
+              <div className="aspect-[4/3] bg-charcoal/5 overflow-hidden mb-4 relative border border-charcoal/10 shadow-md">
                 <PropertyImage
                   src={property.images[0]}
                   alt={property.displayTitle}

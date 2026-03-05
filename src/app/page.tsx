@@ -106,7 +106,7 @@ export default function Home() {
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="aspect-[4/3] bg-charcoal/5 overflow-hidden"
+                className="aspect-[4/3] bg-charcoal/5 overflow-hidden border border-charcoal/10 shadow-md"
               >
                 <img
                   src={`/images/teaser-${i}.jpg`}
