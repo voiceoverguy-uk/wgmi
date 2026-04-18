@@ -2,10 +2,19 @@
 
 import { useState } from "react";
 
+const MIN_WORDS = 6;
+
+const countWords = (s: string) =>
+  s.trim().split(/\s+/).filter(Boolean).length;
+
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
   const [validationError, setValidationError] = useState("");
+  const [message, setMessage] = useState("");
+
+  const wordCount = countWords(message);
+  const wordsRemaining = Math.max(0, MIN_WORDS - wordCount);
+  const meetsMin = wordCount >= MIN_WORDS;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,8 +26,7 @@ export default function ContactForm() {
       reason: (form.elements.namedItem("reason") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
-    const wordCount = data.message.trim().split(/\s+/).filter(Boolean).length;
-    if (wordCount < 6) {
+    if (countWords(data.message) < MIN_WORDS) {
       setValidationError("Please write at least 6 words so we can help you properly.");
       return;
     }
@@ -93,8 +101,15 @@ export default function ContactForm() {
           name="message"
           rows={5}
           required
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className="w-full px-4 py-3 bg-white border border-charcoal/15 text-sm focus:outline-none focus:border-charcoal/30 transition-colors resize-none"
         />
+        <p className={`mt-2 text-xs ${meetsMin ? "text-charcoal-light" : "text-charcoal-light"}`}>
+          {meetsMin
+            ? `${wordCount} words — looks good.`
+            : `${wordsRemaining} more word${wordsRemaining === 1 ? "" : "s"} needed (minimum ${MIN_WORDS}).`}
+        </p>
       </div>
       <button
         type="submit"
