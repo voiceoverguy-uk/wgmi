@@ -20,6 +20,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
+    const wordCount = String(message).trim().split(/\s+/).filter(Boolean).length;
+    if (wordCount < 6) {
+      return NextResponse.json({ error: "Message too short" }, { status: 400 });
+    }
+
     const nameSafe = safe(name);
     const emailSafe = safe(email);
     const reasonSafe = safe(reason);
@@ -86,7 +91,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "WGMI Website <noreply@voiceoverguy.co.uk>",
-      to: ["enquiries@wgmi.co.uk", "enquiries@voiceoverguy.co.uk"],
+      to: ["enquiries@wgmi.co.uk"],
       subject: "WGMI Website Enquiry",
       replyTo: email,
       html,

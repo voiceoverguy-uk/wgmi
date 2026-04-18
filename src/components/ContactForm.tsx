@@ -5,9 +5,11 @@ import { useState } from "react";
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  const [validationError, setValidationError] = useState("");
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
+    setValidationError("");
     const form = e.currentTarget;
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
@@ -15,6 +17,12 @@ export default function ContactForm() {
       reason: (form.elements.namedItem("reason") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
+    const wordCount = data.message.trim().split(/\s+/).filter(Boolean).length;
+    if (wordCount < 6) {
+      setValidationError("Please write at least 6 words so we can help you properly.");
+      return;
+    }
+    setStatus("sending");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -95,6 +103,9 @@ export default function ContactForm() {
       >
         {status === "sending" ? "Sending..." : "Send Message"}
       </button>
+      {validationError && (
+        <p className="text-accent text-sm text-center">{validationError}</p>
+      )}
       {status === "error" && (
         <p className="text-accent text-sm text-center">Sorry, something went wrong. Please try again.</p>
       )}
